@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+        <div class="container">
+            <div class="section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Name</th>
+                            <th>Shares</th>
+                            <th>Current Price</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+                        {% for stock in stocks %}
+                            <tr>
+                                <td>{{ stock.symbol }}</td>
+                                <td>{{ stock.name }}</td>
+                                <td>{{ stock.shares }}</td>
+                                <td>{{'%0.2f'|format(current_prices[stock.symbol]|float)}}</td>
+                                <td>{{ '%0.2f'|format(current_prices[stock.symbol]*stock.shares|float) }}</td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <td>CASH</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>{{ '%0.2f'|format(cash|float) }}</td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>{{ '%0.2f'|format(cash + current_prices_added|float) }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+{% endblock %}
