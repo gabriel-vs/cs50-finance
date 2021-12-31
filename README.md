@@ -8,6 +8,11 @@
 
 ## About this project
 
-**CS50 Finance** is a web app build with **Flask** via which users can "buy" and "sell" stocks. The data utilized in the project is provided by [IEX](https://iexcloud.io/), which lets us download stock quotes via their API.
+**CS50 Finance** is a web app build with **Flask** via which users can "buy" and "sell" stocks.
 
-This project is one of the ten problem sets from CS50, Harvard University's introduction to computer science.
+## Credits
+
+This project is one of the ten problem sets from CS50, Harvard University's introduction to computer science. Some of the code had already been written, in advance, for the students by the course staff team.
+
+The data utilized in the project is provided by [IEX](https://iexcloud.io/), which lets us download stock quotes via their API.
+
